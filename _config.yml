@@ -2,8 +2,8 @@
 title: Vim Cheat Sheet
 email: rtorruellas@gmail.com
 description: "A mobile friendly VIM cheat sheet"
-baseurl: ""
-url: "http://vim.rtorr.com"
+baseurl: "/vim-cheat-sheet"
+url: "https://infab.nu"
 twitter_username: richardiii
 github_username: rtorr
 
