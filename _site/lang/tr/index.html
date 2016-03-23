@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vim Cheat Sheet - Türkçe</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A mobile friendly VIM cheat sheet">
+    <link rel="canonical" href="http://vim.rtorr.com/lang/tr/">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+    <body class="tr">
+<div class="container">
+  <div class="grid-block">
+  <div class="grid-1">
+    <h1><a class="site-title" href="/">Vim Cheat Sheet</a></h1>
+  </div>
+</div> <!-- end row -->
+
+  <div class="commands-container">
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>nivv</h2>
+        <ul>
+          <li><kbd>cit</kbd> - change inside of tag</li>
+          <li><kbd>dit</kbd> - delete inside of tag</li>
+          <li><kbd>yit</kbd> - yank inside of tag</li>
+          <li><kbd>vitp</kbd> - paste inside of tag</li>
+          <li><kbd>caw</kbd> - change word</li>
+        </ul>
+        <h2>İmleç hareketleri</h2>
+        <ul>
+          <li><kbd>h</kbd> - imleci sola kaydir</li>
+          <li><kbd>j</kbd> - imleci aşağı kaydır</li>
+          <li><kbd>k</kbd> - imleci yukarı kaydır</li>
+          <li><kbd>l</kbd> - imleci sağa kaydır</li>
+          <li><kbd>w</kbd> - bir sonraki kelimenin başlangıcına atla</li>
+          <li><kbd>W</kbd> - bir sonraki kelimenin başlangıcına atla (kelime noktalama işareti içerebilir)</li>
+          <li><kbd>e</kbd> - bir sonraki kelimenin sonuna atla</li>
+          <li><kbd>E</kbd> - bir sonraki kelimenin sonuna atla (kelime noktalama işareti içerebilir)</li>
+          <li><kbd>b</kbd> - bir önceki kelimenin başlangıcına atla</li>
+          <li><kbd>B</kbd> - bir önceki kelimenin başlangıcına atla (kelime noktalama işareti içerebilir)</li>
+          <li><kbd>0</kbd> - satır başına atla</li>
+          <li><kbd>^</kbd> - satır üzerindeki ilk boşluk olmayan karaktere atla</li>
+          <li><kbd>$</kbd> - satır sonuna atla</li>
+          <li><kbd>gg</kbd> - go to the first line of the document</li>
+          <li><kbd>G</kbd> - dökümanın son satırına git</li>
+          <li><kbd>5G</kbd> - 5. satıra git</li>
+          <li><kbd>fx</kbd> - jump to next occurrence of character x</li>
+          <li><kbd>tx</kbd> - jump to before next occurrence of character x</li>
+          <li><kbd>}</kbd> - Jump to next paragraph (or function/block, when editing code)</li>
+          <li><kbd>{</kbd> - Jump to previous paragraph (or function/block, when editing code)</li>
+        </ul>
+        <div class="well">
+          <strong>Tip</strong> İmleç hareketleri komutlarından önce verilen sayı kadar komut çalıştırılır. Örneğin, <kbd>4j</kbd> 4 satır aşağıya gider.
+        </div>
+        <h2>Ekleme modu - yazma/ekleme modu</h2>
+        <ul>
+          <li><kbd>i</kbd> - imleçden önce ekler</li>
+          <li><kbd>I</kbd> - satır başına ekler</li>
+          <li><kbd>a</kbd> - imleç sonrasına ekler</li>
+          <li><kbd>A</kbd> - satır sonuna ekler</li>
+          <li><kbd>o</kbd> - şu anki satırın altına yeni satır ekler ekler</li>
+          <li><kbd>O</kbd> - şu anki satırın üstüne yeni satır ekler ekler</li>
+          <li><kbd>ea</kbd> - kelimenin sonuna ekler</li>
+          <li><kbd>Esc</kbd> - ekleme modundan çıkar</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Vim surround</h2>
+        <ul>
+          <li><kbd>cs</kbd> - replace surrounding tags, do <kbd>cs ' "</kbd> to change to double quotes </li>
+          <li><kbd>cst</kbd> - change surrounding tag </li>
+          <li><kbd>dst</kbd> - delete surrounding tag </li>
+          <li><kbd>⇧ S</kbd> - create surrounding tag (requires selection)</li>
+        </ul>
+        <h2>Düzenleme</h2>
+        <ul>
+          <li><kbd>r</kbd> - tek karakterin yerine koyar</li>
+          <li><kbd>J</kbd> - şu anki satırın altına ekler</li>
+          <li><kbd>cc</kbd> - tüm satırı değiştirir (yerine koyar)</li>
+          <li><kbd>cw</kbd> - kelimenin sonuna kadar değiştirir (yerine koyar)</li>
+          <li><kbd>c$</kbd> - satır sonuna kadar değiştirir (yerine koyar)</li>
+          <li><kbd>s</kbd> - karakteri siler ve metin ile değiştirir</li>
+          <li><kbd>S</kbd> - satırı siler ve metin ile değiştirir (cc komutu ile aynı)</li>
+          <li><kbd>xp</kbd> - iki harfi transpoze eder (sil ve yapıştır)</li>
+          <li><kbd>u</kbd> - geri al</li>
+          <li><kbd>Ctrl</kbd> + <kbd>r</kbd> - ileri al</li>
+          <li><kbd>.</kbd> - son komutu tekrarla</li>
+        </ul>
+        <h2>Metin işaretleme(görsel mod)</h2>
+        <ul>
+          <li><kbd>v</kbd> - start visual mode, mark lines, then do a command (like y-yank)</li>
+          <li><kbd>V</kbd> - start linewise visual mode</li>
+          <li><kbd>o</kbd> - diğer işaretlenmiş alanın sonuna gider</li>
+          <li><kbd>Ctrl</kbd> + <kbd>v</kbd> - görsel blok moduna başlar</li>
+          <li><kbd>O</kbd> - diğer bloğun köşesine gider</li>
+          <li><kbd>aw</kbd> - kelimeyi işaretle</li>
+          <li><kbd>ab</kbd> - () ile bloklar</li>
+          <li><kbd>aB</kbd> - {} ile bloklar</li>
+          <li><kbd>ib</kbd> - () içerisini bloklar</li>
+          <li><kbd>iB</kbd> - {} içerisini bloklar</li>
+          <li><kbd>Esc</kbd> - görsel moddan çık</li>
+        </ul>
+        <h2>Görsel komutlar</h2>
+        <ul>
+          <li><kbd>&#62;</kbd> - metni sağa kaydır</li>
+          <li><kbd>&#60;</kbd> - metni sola kaydır</li>
+          <li><kbd>y</kbd> - işaretlenmiş metni kopyala</li>
+          <li><kbd>d</kbd> - işaretlenmiş metni sil</li>
+          <li><kbd>~</kbd> - harfleri büyükse küçük, küçükse büyük yap</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Kes ve yapıştır</h2>
+        <ul>
+          <li><kbd>yy</kbd> - tek satır kopyalar</li>
+          <li><kbd>2yy</kbd> - 2 satır kopyalar</li>
+          <li><kbd>yw</kbd> - kelime kopyalar</li>
+          <li><kbd>y$</kbd> - satır sonuna kadar kopyalar</li>
+          <li><kbd>p</kbd> - imleç sonrasına yapıştırır</li>
+          <li><kbd>P</kbd> - imleç öncesine yapıştırır</li>
+          <li><kbd>dd</kbd> - satırı (keser) siler</li>
+          <li><kbd>2dd</kbd> - 2 satırı (keser) siler</li>
+          <li><kbd>dw</kbd> - kelime (keser) siler</li>
+          <li><kbd>D</kbd> - satır sonuna kadar (keser) siler</li>
+          <li><kbd>d$</kbd> - satır sonuna kadar (keser) siler</li>
+          <li><kbd>x</kbd> - karakter (keser) siler</li>
+        </ul>
+        <h2>Çıkış</h2>
+        <ul>
+          <li><kbd>:w</kbd> - dosyayı kaydet, ama kapatma</li>
+          <li><kbd>:w !sudo tee %</kbd> - write out the current file using sudo</li>
+          <li><kbd>:wq</kbd> or <kbd>:x</kbd> or <kbd>ZZ</kbd> - dosyayı kaydet ve kapat</li>
+          <li><kbd>:q</kbd> - (kaydedilmemiş değişiklikler varsa hata ver) kapat</li>
+          <li><kbd>:q!</kbd> or <kbd>ZQ</kbd> - kaydedilmemiş değişiklikleri at ve kapat</li>
+        </ul>
+        <h2>Ara ve değiştir</h2>
+        <ul>
+          <li><kbd>/pattern</kbd> - kalıbı ara</li>
+          <li><kbd>?pattern</kbd> - geriye doğru kalıbı ara</li>
+          <li><kbd>\vpattern</kbd> - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</li>
+          <li><kbd>n</kbd> - aynı yönde aramaya devam et</li>
+          <li><kbd>N</kbd> - ters yönde aramaya devam et</li>
+          <li><kbd>:%s/old/new/g</kbd> - dosya boyunca tüm eskileri yenileriyle değiştirir</li>
+          <li><kbd>:%s/old/new/gc</kbd> - dosya boyunca tüm eskileri yenileriyle onaylayarak değiştirir</li>
+          <li><kbd>:noh</kbd> - remove highlighting of search matches</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>Birden çok dosya ile çalışma</h2>
+        <ul>
+          <li><kbd>:e</kbd> filename - yeni buffer da dosyayı düzenle</li>
+          <li><kbd>:bnext</kbd> or <kbd>:bn</kbd> - bir sonraki buffer a geçer</li>
+          <li><kbd>:bprev</kbd> or <kbd>:bp</kbd> - bir önceki buffer a geçer</li>
+          <li><kbd>:bd</kbd> - buffer ı siler ve dosyayı kapatır</li>
+          <li><kbd>:ls</kbd> - list all open buffers</li>
+          <li><kbd>:sp</kbd> filename - yeni buffer da dosya açar ve pencereyi böler</li>
+          <li><kbd>:vsp</kbd> filename - yeni buffer da dosya açar ve dikey olarak pencereyi böler</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ws</kbd> - pencereyi böler</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ww</kbd> - pencereyi değiştirir</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wq</kbd> - pencereyi kapatır</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wv</kbd> - pencereyi dikey böler</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wh</kbd> - imleci sol pencereye taşır (dikey bölme)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wl</kbd> - imleci sağ pencereye taşır (dikey bölme)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wj</kbd> - imleci aşağı pencereye taşır (yatay bölme)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wk</kbd> - imleci yukarı pencereye taşır (yatay bölme)</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Tabs</h2>
+        <ul>
+          <li><kbd>:tabnew</kbd> filename or <kbd>:tabn</kbd> filename - yeni sekmede dosya aç</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wT</kbd>  - kendi sekmeleri içerisinde şu anki bölünmüş pencereye geçer</li>
+          <li><kbd>gt</kbd> or <kbd>:tabnext</kbd> or <kbd>:tabn</kbd>  - bir sonraki sekmeye geçer</li>
+          <li><kbd>gT</kbd> or <kbd>:tabprev</kbd> or <kbd>:tabp</kbd>  - bir önceki sekmeye geçer</li>
+          <li><kbd>#gt</kbd> - #. sekmeye geçer</li>
+          <li><kbd>:tabmove #</kbd> - şu anki sekmeyi #. pozisyona taşır (sıralama 0'dan başlar)</li>
+          <li><kbd>:tabclose</kbd> or <kbd>:tabc</kbd> - şu anki sekmeyi ve tüm pencereleri kapat</li>
+          <li><kbd>:tabonly</kbd> or <kbd>:tabo</kbd> - şu anki sekme dışında hepsini kapat</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+  </div>
+  <div >
+  <div id="footer" class="grid-block">
+    <div class="box">
+      <div class="box-header">
+        <h2 id="languages">Additional Resources</h2>
+      </div>
+      <div class="box-body">
+        <div class="grid-block">
+          <div class="grid-lg-1-2">
+            <h3 id="languages">Languages</h3>
+            <ul>
+              
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/de_de/">Deutsch</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/es_es/">Español</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/fr_fr/">Français</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/it/">Italiano</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ja/">日本語</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ko/">한국어</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/pt_br/">Português - Brasil</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ro/">Romana</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ru/">Русский</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/th/">ภาษาไทย</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/tr/">Türkçe</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/uk/">Українська</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_cn/">简体汉语</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_tw/">繁體中文</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/">English</a></li>
+
+              
+              
+            </ul>
+          </div>
+          <div class="grid-lg-1-2">
+            <h3>About the vim cheat sheet</h3>
+            <p>This project aims to be one of the most accessible vim guides available. We made sure to support mobile, desktop, and other <a href="#languages">languages</a>.</p>
+            <p>You can read about how to contribute (and help improve) by viewing our <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/README.md" target="_blank">README</a>.
+              There you can see how to set up this project, or how to contribute a new language. Here is a big thank you to our <a href="https://github.com/rtorr/vim-cheat-sheet/graphs/contributors" target="_blank">contributors</a>!</p>
+            <p>This project is licensed under <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/License.txt" target="_blank">The MIT License (MIT)</a>.</p>
+            <h3>Contributor Code of Conduct</h3>
+            <p>This project strongly believes in having a code of conduct. <a href="/code_of_conduct/"> Please
+                see the code of conduct page for more information.</a></p>
+            <h3>Other places to find this document</h3>
+            <p>This document was embedded in <a href="https://duckduckgo.com/?q=vim+cheat+sheet" target="_blank">DuckDuckGo</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-block link-to-repo">
+    <p>Checkout the source on <a href="https://github.com/rtorr/vim-cheat-sheet" target="_blank">Github</a></p>
+  </div>
+</div>
+
+</div> <!-- end container -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25408695-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vim Cheat Sheet - 한국어</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A mobile friendly VIM cheat sheet">
+    <link rel="canonical" href="http://vim.rtorr.com/lang/ko/">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+    <body class="ko">
+<div class="container">
+  <div class="grid-block">
+  <div class="grid-1">
+    <h1><a class="site-title" href="/">Vim Cheat Sheet</a></h1>
+  </div>
+</div> <!-- end row -->
+
+  <div class="commands-container">
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>nivv</h2>
+        <ul>
+          <li><kbd>cit</kbd> - change inside of tag</li>
+          <li><kbd>dit</kbd> - delete inside of tag</li>
+          <li><kbd>yit</kbd> - yank inside of tag</li>
+          <li><kbd>vitp</kbd> - paste inside of tag</li>
+          <li><kbd>caw</kbd> - change word</li>
+        </ul>
+        <h2>커서 이동</h2>
+        <ul>
+          <li><kbd>h</kbd> - 왼쪽으로 이동</li>
+          <li><kbd>j</kbd> - 밑으로 이동</li>
+          <li><kbd>k</kbd> - 위로 이동</li>
+          <li><kbd>l</kbd> - 오른쪽으로 이동</li>
+          <li><kbd>w</kbd> - 다음 단어의 선두로 점프</li>
+          <li><kbd>W</kbd> - 다음 단어의 선두로 점프(구절문자 단어로 인식)</li>
+          <li><kbd>e</kbd> - 현재 단어의 후미로 점프</li>
+          <li><kbd>E</kbd> - 현재 단어의 후미로 점프(구절문자 단어로 인식)</li>
+          <li><kbd>b</kbd> - 단어의 선두로 점프</li>
+          <li><kbd>B</kbd> - 단어의 선두로 점프(구절문자 단어로 인식)</li>
+          <li><kbd>0</kbd> - 행의 선두로 점프</li>
+          <li><kbd>^</kbd> - 행의 선두 문자로 점프</li>
+          <li><kbd>$</kbd> - 행의 후미로 점프</li>
+          <li><kbd>gg</kbd> - go to the first line of the document</li>
+          <li><kbd>G</kbd> - 문서의 마지막 행으로 점프</li>
+          <li><kbd>5G</kbd> - 5번째 라인으로 점프</li>
+          <li><kbd>fx</kbd> - jump to next occurrence of character x</li>
+          <li><kbd>tx</kbd> - jump to before next occurrence of character x</li>
+          <li><kbd>}</kbd> - Jump to next paragraph (or function/block, when editing code)</li>
+          <li><kbd>{</kbd> - Jump to previous paragraph (or function/block, when editing code)</li>
+        </ul>
+        <div class="well">
+          <strong>Tip</strong> 커서 이동 명령 앞에 숫자를 붙이면 그 수 만큼 반복. 예를 들어서, <kbd>4j</kbd> 는 4행 아래로 이동.
+        </div>
+        <h2>삽입 모드 - 택스트를 삽입/추가</h2>
+        <ul>
+          <li><kbd>i</kbd> - 커서 앞에 삽입/추가모드 시작</li>
+          <li><kbd>I</kbd> - 행의 선두에서 삽입/추가모드 시작</li>
+          <li><kbd>a</kbd> - 커서의 바로 뒤부터 삽입/추가모드 시작</li>
+          <li><kbd>A</kbd> - 행의 마자막에 삽입/추가모드 시작</li>
+          <li><kbd>o</kbd> - 현재행의 아래에 새 라인 추가, 입력/추가모드 시작</li>
+          <li><kbd>O</kbd> - 현재행의 위에 새 라인 추가, 입력/추가모드 시작</li>
+          <li><kbd>ea</kbd> - 현 단어의 마지막에 입력/추가모드 시작</li>
+          <li><kbd>Esc</kbd> - 삽입 모드 종료</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Vim surround</h2>
+        <ul>
+          <li><kbd>cs</kbd> - replace surrounding tags, do <kbd>cs ' "</kbd> to change to double quotes </li>
+          <li><kbd>cst</kbd> - change surrounding tag </li>
+          <li><kbd>dst</kbd> - delete surrounding tag </li>
+          <li><kbd>⇧ S</kbd> - create surrounding tag (requires selection)</li>
+        </ul>
+        <h2>편집</h2>
+        <ul>
+          <li><kbd>r</kbd> - 한 문자를 치환</li>
+          <li><kbd>J</kbd> - 현재 행과 다음 행을 연결</li>
+          <li><kbd>cc</kbd> - 현재행 전체를 새로 수정</li>
+          <li><kbd>cw</kbd> - 현재의 단어를 치환</li>
+          <li><kbd>c$</kbd> - 현재 커서위치애서 행의 마지막까지 새로 수정</li>
+          <li><kbd>s</kbd> - 한 문작 삭제후 삽입 모드 시작</li>
+          <li><kbd>S</kbd> - 현재행 전체를 새로 수정(<kbd>cc</kbd>와 동일)</li>
+          <li><kbd>xp</kbd> - 두 문자를 스홥.(잘라내기 붙여넣기 조합)</li>
+          <li><kbd>u</kbd> - 되돌리기(undo)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>r</kbd> - 다시하기(redo)</li>
+          <li><kbd>.</kbd> - 마지막 명령 다시실행</li>
+        </ul>
+        <h2>텍스트 선택(비쥬얼 모드)</h2>
+        <ul>
+          <li><kbd>v</kbd> - 선택 모드 시작. 텍스트를 선택해서 명령을 실행(예를 들어 y 양크)</li>
+          <li><kbd>V</kbd> - 행 단위 선택 모드 시작</li>
+          <li><kbd>o</kbd> - 션택한 영역의 반대편까지 커서 이동</li>
+          <li><kbd>Ctrl</kbd> + <kbd>v</kbd> - 블럭형태 선택 모드 시작</li>
+          <li><kbd>O</kbd> - 블럭의 반대편 코너로 이동</li>
+          <li><kbd>aw</kbd> - 단어 선택에 추가</li>
+          <li><kbd>ab</kbd> - () 블럭 추가</li>
+          <li><kbd>aB</kbd> - {} 블럭 추가</li>
+          <li><kbd>ib</kbd> - () 블럭의 내부 추가</li>
+          <li><kbd>iB</kbd> - {} 블럭의 내부 추가</li>
+          <li><kbd>Esc</kbd> - 선택 모드 종료</li>
+        </ul>
+        <h2>선택 모드 명령</h2>
+        <ul>
+          <li><kbd>&#62;</kbd> - 선택 영역을 오른쪽  이동(shift)</li>
+          <li><kbd>&#60;</kbd> - 왼쪽 이동(shift)</li>
+          <li><kbd>y</kbd> - 선택한 택스트를 양크(복사)</li>
+          <li><kbd>d</kbd> - 선택한 텍스트를 삭제</li>
+          <li><kbd>~</kbd> - 대소문자 반전</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>잘라내기와 붙이기</h2>
+        <ul>
+          <li><kbd>yy</kbd> - 현재행 양크(yank, 복사)</li>
+          <li><kbd>2yy</kbd> - 2줄 양크</li>
+          <li><kbd>yw</kbd> - 단어를 양크</li>
+          <li><kbd>y$</kbd> - 현재행 마지막까지 양크</li>
+          <li><kbd>p</kbd> - 커서 위치 뒤에 붙이기</li>
+          <li><kbd>P</kbd> - 커서 위치 앞에 분이기</li>
+          <li><kbd>dd</kbd> - 현재행 잘라내기</li>
+          <li><kbd>2dd</kbd> - 2줄 잘라내기</li>
+          <li><kbd>dw</kbd> - 단어 잘라내기</li>
+          <li><kbd>D</kbd> - 커서 위치에서 행의 마지막까지 잘라내기</li>
+          <li><kbd>d$</kbd> - 커서 위치에서 행의 마지막까지 잘라내기(<kbd>D</kbd>와 동일)</li>
+          <li><kbd>x</kbd> - 한 문자 잘라내기</li>
+        </ul>
+        <h2>나가기</h2>
+        <ul>
+          <li><kbd>:w</kbd> - 나가지 않고 저장</li>
+          <li><kbd>:w !sudo tee %</kbd> - write out the current file using sudo</li>
+          <li><kbd>:wq</kbd> or <kbd>:x</kbd> or <kbd>ZZ</kbd> - 저장하고 나가기</li>
+          <li><kbd>:q</kbd> - 저장하지 않고 나가기(저장하지 않은 수정이 있을 경우 실패)</li>
+          <li><kbd>:q!</kbd> or <kbd>ZQ</kbd> - 저장하지 않고 나가기(저장하지 않은 수정이 있더라도 무시)</li>
+        </ul>
+        <h2>검색/치환</h2>
+        <ul>
+          <li><kbd>/pattern</kbd> - 패턴 검색</li>
+          <li><kbd>?pattern</kbd> - 패턴 검색 전방으로</li>
+          <li><kbd>\vpattern</kbd> - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</li>
+          <li><kbd>n</kbd> - 같은 방향으로 다시 검색</li>
+          <li><kbd>N</kbd> - 역방향으로 다시 검색</li>
+          <li><kbd>:%s/old/new/g</kbd> - 파일 내 모든 old를 new로 치환</li>
+          <li><kbd>:%s/old/new/gc</kbd> - 파일 내 모든 old를 new로 치환(확인)</li>
+          <li><kbd>:noh</kbd> - remove highlighting of search matches</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>복수개의 파일 작업</h2>
+        <ul>
+          <li><kbd>:e</kbd> filename - 새 버퍼에서 파일 편집</li>
+          <li><kbd>:bnext</kbd> or <kbd>:bn</kbd> - 다음 버퍼로 이동</li>
+          <li><kbd>:bprev</kbd> or <kbd>:bp</kbd> - 앞 버퍼로 이동</li>
+          <li><kbd>:bd</kbd> - 버퍼를 삭제(파일을 닫음)</li>
+          <li><kbd>:ls</kbd> - list all open buffers</li>
+          <li><kbd>:sp</kbd> filename - 분할 윈도우에 새로운 버퍼의 새로운 파일을 열기</li>
+          <li><kbd>:vsp</kbd> filename - 세로 분활 윈도우에 새로운 버퍼에 새로운 파일을 열기</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ws</kbd> - 윈도우 분할</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ww</kbd> - 윈도우 스위치</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wq</kbd> - 윈도우 닫기</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wv</kbd> - 윈도우 세로로 분할</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wh</kbd> - 오른쪽 윈도우로 이동</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wl</kbd> - 왼쪽 윈도우로 이동</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wj</kbd> - 아래 윈도우로 이동</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wk</kbd> - 위 윈도우로 이동</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>탭</h2>
+        <ul>
+          <li><kbd>:tabnew</kbd> filename or <kbd>:tabn</kbd> filename - 새 탭으로 파일 열기</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wT</kbd>  - 현재 윈도우를 새로운 탭으로 이동</li>
+          <li><kbd>gt</kbd> or <kbd>:tabnext</kbd> or <kbd>:tabn</kbd>  - 다음 탭으로 이동</li>
+          <li><kbd>gT</kbd> or <kbd>:tabprev</kbd> or <kbd>:tabp</kbd>  - 앞 탭으로 이동</li>
+          <li><kbd>#gt</kbd> - n번 탭으로 이동</li>
+          <li><kbd>:tabmove #</kbd> - 현재 탭을 n번째로 이동(0부터 시작)</li>
+          <li><kbd>:tabclose</kbd> or <kbd>:tabc</kbd> - 현재 탭을 닫기</li>
+          <li><kbd>:tabonly</kbd> or <kbd>:tabo</kbd> - 현재 탭 이외의 모든 탭 닫기</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+  </div>
+  <div >
+  <div id="footer" class="grid-block">
+    <div class="box">
+      <div class="box-header">
+        <h2 id="languages">Additional Resources</h2>
+      </div>
+      <div class="box-body">
+        <div class="grid-block">
+          <div class="grid-lg-1-2">
+            <h3 id="languages">Languages</h3>
+            <ul>
+              
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/de_de/">Deutsch</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/es_es/">Español</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/fr_fr/">Français</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/it/">Italiano</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ja/">日本語</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ko/">한국어</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/pt_br/">Português - Brasil</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ro/">Romana</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ru/">Русский</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/th/">ภาษาไทย</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/tr/">Türkçe</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/uk/">Українська</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_cn/">简体汉语</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_tw/">繁體中文</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/">English</a></li>
+
+              
+              
+            </ul>
+          </div>
+          <div class="grid-lg-1-2">
+            <h3>About the vim cheat sheet</h3>
+            <p>This project aims to be one of the most accessible vim guides available. We made sure to support mobile, desktop, and other <a href="#languages">languages</a>.</p>
+            <p>You can read about how to contribute (and help improve) by viewing our <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/README.md" target="_blank">README</a>.
+              There you can see how to set up this project, or how to contribute a new language. Here is a big thank you to our <a href="https://github.com/rtorr/vim-cheat-sheet/graphs/contributors" target="_blank">contributors</a>!</p>
+            <p>This project is licensed under <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/License.txt" target="_blank">The MIT License (MIT)</a>.</p>
+            <h3>Contributor Code of Conduct</h3>
+            <p>This project strongly believes in having a code of conduct. <a href="/code_of_conduct/"> Please
+                see the code of conduct page for more information.</a></p>
+            <h3>Other places to find this document</h3>
+            <p>This document was embedded in <a href="https://duckduckgo.com/?q=vim+cheat+sheet" target="_blank">DuckDuckGo</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-block link-to-repo">
+    <p>Checkout the source on <a href="https://github.com/rtorr/vim-cheat-sheet" target="_blank">Github</a></p>
+  </div>
+</div>
+
+</div> <!-- end container -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25408695-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+
+</html>

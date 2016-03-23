@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vim Cheat Sheet - Українська</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A mobile friendly VIM cheat sheet">
+    <link rel="canonical" href="http://vim.rtorr.com/lang/uk/">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+    <body class="uk">
+<div class="container">
+  <div class="grid-block">
+  <div class="grid-1">
+    <h1><a class="site-title" href="/">Vim Cheat Sheet</a></h1>
+  </div>
+</div> <!-- end row -->
+
+  <div class="commands-container">
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>nivv</h2>
+        <ul>
+          <li><kbd>cit</kbd> - change inside of tag</li>
+          <li><kbd>dit</kbd> - delete inside of tag</li>
+          <li><kbd>yit</kbd> - yank inside of tag</li>
+          <li><kbd>vitp</kbd> - paste inside of tag</li>
+          <li><kbd>caw</kbd> - change word</li>
+        </ul>
+        <h2>Переміщення курсору</h2>
+        <ul>
+          <li><kbd>h</kbd> - перемістити курсор ліворуч</li>
+          <li><kbd>j</kbd> - перемістити курсор вниз</li>
+          <li><kbd>k</kbd> - перемістити курсор вгору</li>
+          <li><kbd>l</kbd> - перемістити курсор праворуч</li>
+          <li><kbd>w</kbd> - переміститись вперед на початок слова</li>
+          <li><kbd>W</kbd> - переміститись вперед на початок слова (слово може містити пунктуацію)</li>
+          <li><kbd>e</kbd> - переміститись вперед на кінець слова</li>
+          <li><kbd>E</kbd> - переміститись вперед на кінець слова (слово може містити пунктуацію)</li>
+          <li><kbd>b</kbd> - переміститись назад на початок слова</li>
+          <li><kbd>B</kbd> - переміститись назад на початок слова (слово може містити пунктуацію)</li>
+          <li><kbd>0</kbd> - переміститись на початок строчки</li>
+          <li><kbd>^</kbd> - переміститись на перший непробільний символ строчки</li>
+          <li><kbd>$</kbd> - переміститись в кінець строчки</li>
+          <li><kbd>gg</kbd> - go to the first line of the document</li>
+          <li><kbd>G</kbd> - переміститись на останню строчку документа</li>
+          <li><kbd>5G</kbd> - перемістити на п'яту строчку</li>
+          <li><kbd>fx</kbd> - jump to next occurrence of character x</li>
+          <li><kbd>tx</kbd> - jump to before next occurrence of character x</li>
+          <li><kbd>}</kbd> - Jump to next paragraph (or function/block, when editing code)</li>
+          <li><kbd>{</kbd> - Jump to previous paragraph (or function/block, when editing code)</li>
+        </ul>
+        <div class="well">
+          <strong>Tip</strong> Добавте число перед командою переміщения курсору для того, щоб повторити її. Наприклад, <kbd>4j</kbd> переміщує курсор на 4 строчки вниз.
+        </div>
+        <h2>Режим вставки - вставка/додавання тексту</h2>
+        <ul>
+          <li><kbd>i</kbd> - вставка перед курсором</li>
+          <li><kbd>I</kbd> - вставка на початок строчки</li>
+          <li><kbd>a</kbd> - вставка (додавання) після курсору</li>
+          <li><kbd>A</kbd> - вставка (додавання) у кінець строчки</li>
+          <li><kbd>o</kbd> - додавання нової строчки під поточною</li>
+          <li><kbd>O</kbd> - додавання нової строчки над поточною</li>
+          <li><kbd>ea</kbd> - вставка (додавання) в кінці слова</li>
+          <li><kbd>Esc</kbd> - вихід з режиму вставки</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Vim surround</h2>
+        <ul>
+          <li><kbd>cs</kbd> - replace surrounding tags, do <kbd>cs ' "</kbd> to change to double quotes </li>
+          <li><kbd>cst</kbd> - change surrounding tag </li>
+          <li><kbd>dst</kbd> - delete surrounding tag </li>
+          <li><kbd>⇧ S</kbd> - create surrounding tag (requires selection)</li>
+        </ul>
+        <h2>Редагування</h2>
+        <ul>
+          <li><kbd>r</kbd> - замінити один символ</li>
+          <li><kbd>J</kbd> - приєднати нижню строчку до поточної</li>
+          <li><kbd>cc</kbd> - замінити усю строчку</li>
+          <li><kbd>cw</kbd> - замінити до кінця слова</li>
+          <li><kbd>c$</kbd> - замінити до кінця строчки</li>
+          <li><kbd>s</kbd> - видалити символ та замінити текст</li>
+          <li><kbd>S</kbd> - видалити строчку та замінити текст (те ж що й cc)</li>
+          <li><kbd>xp</kbd> - переставити дві букви (видалити й вставити)</li>
+          <li><kbd>u</kbd> - скасувати</li>
+          <li><kbd>Ctrl</kbd> + <kbd>r</kbd> - повторити</li>
+          <li><kbd>.</kbd> - повторити останню команду</li>
+        </ul>
+        <h2>Виділення тексту (візуальний режим)</h2>
+        <ul>
+          <li><kbd>v</kbd> - увімкнути режим виділення тексту, виділити строчки, потім виконати команду (наприклад, y-копіювання)</li>
+          <li><kbd>V</kbd> - увімкнути построчний режим виділення</li>
+          <li><kbd>o</kbd> - переміститись на інший кінець виділеної частини</li>
+          <li><kbd>Ctrl</kbd> + <kbd>v</kbd> - увімкнути режим виділення блоків</li>
+          <li><kbd>O</kbd> - перемістити на інший кут блоку</li>
+          <li><kbd>aw</kbd> - виділити слово</li>
+          <li><kbd>ab</kbd> - блок у ()</li>
+          <li><kbd>aB</kbd> - блок у {}</li>
+          <li><kbd>ib</kbd> - внутрішній блок у ()</li>
+          <li><kbd>iB</kbd> - внутрішній блок у {}</li>
+          <li><kbd>Esc</kbd> - вийти з режиму виділення тексту</li>
+        </ul>
+        <h2>Візуальні команди</h2>
+        <ul>
+          <li><kbd>&#62;</kbd> - змістити текст праворуч</li>
+          <li><kbd>&#60;</kbd> - змістити текст ліворуч</li>
+          <li><kbd>y</kbd> - скопіювати виділений текст</li>
+          <li><kbd>d</kbd> - видалити виділений текст</li>
+          <li><kbd>~</kbd> - переключити регістр</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Вирізати й вставити</h2>
+        <ul>
+          <li><kbd>yy</kbd> - скопіювати строчку</li>
+          <li><kbd>2yy</kbd> - скопіювати 2 строчки</li>
+          <li><kbd>yw</kbd> - скопіювати слово</li>
+          <li><kbd>y$</kbd> - скопіювати до кінця строчки</li>
+          <li><kbd>p</kbd> - вставити вміст буфера обміну після курсору</li>
+          <li><kbd>P</kbd> - вставити вміст буфера обміну перед курсором</li>
+          <li><kbd>dd</kbd> - видалити (вирізати) строчку</li>
+          <li><kbd>2dd</kbd> - видалити (вирізати) 2 строчки</li>
+          <li><kbd>dw</kbd> - видалити (вирізати) слово</li>
+          <li><kbd>D</kbd> - видалити (вирізати) до кінця строчки</li>
+          <li><kbd>d$</kbd> - видалити (вирізати) до кінця строчки</li>
+          <li><kbd>x</kbd> - видалити (вирізати) символ</li>
+        </ul>
+        <h2>Вийти й зберегти</h2>
+        <ul>
+          <li><kbd>:w</kbd> - зберегти файл, але не виходити</li>
+          <li><kbd>:w !sudo tee %</kbd> - write out the current file using sudo</li>
+          <li><kbd>:wq</kbd> or <kbd>:x</kbd> or <kbd>ZZ</kbd> - зберегти файл та вийти</li>
+          <li><kbd>:q</kbd> - вийти (не працює у випадку якщо зміни не збережено)</li>
+          <li><kbd>:q!</kbd> or <kbd>ZQ</kbd> - вийти та втратити зміни що незбережено</li>
+        </ul>
+        <h2>Пошук та заміна</h2>
+        <ul>
+          <li><kbd>/pattern</kbd> - пошук шаблону</li>
+          <li><kbd>?pattern</kbd> - зворотній пошук шаблону</li>
+          <li><kbd>\vpattern</kbd> - 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</li>
+          <li><kbd>n</kbd> - повторити пошук у тому ж напрямку</li>
+          <li><kbd>N</kbd> - повторити пошук у зворотньому напрямку</li>
+          <li><kbd>:%s/old/new/g</kbd> - замінити усі входження шаблону у файл на вказане значення</li>
+          <li><kbd>:%s/old/new/gc</kbd> - замінити усі входження шаблону у файл на вказане значення з підтвердженням</li>
+          <li><kbd>:noh</kbd> - remove highlighting of search matches</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+    <div class="grid-block">
+      <div class="grid-lg-1-3">
+        <h2>Робота з декількома файлами</h2>
+        <ul>
+          <li><kbd>:e</kbd> filename - редагувати файл у новому буфері</li>
+          <li><kbd>:bnext</kbd> or <kbd>:bn</kbd> - перейти до наступного буфера</li>
+          <li><kbd>:bprev</kbd> or <kbd>:bp</kbd> - перейти до попереднього буфера</li>
+          <li><kbd>:bd</kbd> - видалити буфер (закрити файл)</li>
+          <li><kbd>:ls</kbd> - list all open buffers</li>
+          <li><kbd>:sp</kbd> filename - відкрити файл у новому буфері й розділити вікно</li>
+          <li><kbd>:vsp</kbd> filename - відкрити файл у новому буфері й вертикально розділити вікно</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ws</kbd> - розділити вікно</li>
+          <li><kbd>Ctrl</kbd> + <kbd>ww</kbd> - переключення вікон</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wq</kbd> - закрити вікно</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wv</kbd> - розділити вікно вертикально</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wh</kbd> - переместити курсор у ліве вікно (вертикальний розподіл)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wl</kbd> - переместити курсор у праве вікно (вертикальний розподіл)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wj</kbd> - переместити курсор у вікно нижче (горизонтальний розподіл)</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wk</kbd> - переместити курсор у вікно вище (горизонтальний розподіл)</li>
+        </ul>
+      </div>
+      <div class="grid-lg-1-3">
+        <h2>Вкладинки</h2>
+        <ul>
+          <li><kbd>:tabnew</kbd> filename or <kbd>:tabn</kbd> filename - відкрити файл у новій вкладинці</li>
+          <li><kbd>Ctrl</kbd> + <kbd>wT</kbd>  - перемістити поточне вікно у власну вкладинку</li>
+          <li><kbd>gt</kbd> or <kbd>:tabnext</kbd> or <kbd>:tabn</kbd>  - переключитись на наступну вкладинку</li>
+          <li><kbd>gT</kbd> or <kbd>:tabprev</kbd> or <kbd>:tabp</kbd>  - переключитись на попередню вкладинку</li>
+          <li><kbd>#gt</kbd> - переключити на вкладинку з номером #</li>
+          <li><kbd>:tabmove #</kbd> - перемістити поточну вкладинку на # позицію (нумерація з 0)</li>
+          <li><kbd>:tabclose</kbd> or <kbd>:tabc</kbd> - закрити поточну вкладинку з усіма її вікнами</li>
+          <li><kbd>:tabonly</kbd> or <kbd>:tabo</kbd> - закрити усі вкладинки окрім поточної</li>
+        </ul>
+      </div>
+    </div> <!-- end grid-block -->
+  </div>
+  <div >
+  <div id="footer" class="grid-block">
+    <div class="box">
+      <div class="box-header">
+        <h2 id="languages">Additional Resources</h2>
+      </div>
+      <div class="box-body">
+        <div class="grid-block">
+          <div class="grid-lg-1-2">
+            <h3 id="languages">Languages</h3>
+            <ul>
+              
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/de_de/">Deutsch</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/es_es/">Español</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/fr_fr/">Français</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/it/">Italiano</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ja/">日本語</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ko/">한국어</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/pt_br/">Português - Brasil</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ro/">Romana</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/ru/">Русский</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/th/">ภาษาไทย</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/tr/">Türkçe</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/uk/">Українська</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_cn/">简体汉语</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/lang/zh_tw/">繁體中文</a></li>
+
+              
+              
+
+              
+              <li><a class="page-link" href="/">English</a></li>
+
+              
+              
+            </ul>
+          </div>
+          <div class="grid-lg-1-2">
+            <h3>About the vim cheat sheet</h3>
+            <p>This project aims to be one of the most accessible vim guides available. We made sure to support mobile, desktop, and other <a href="#languages">languages</a>.</p>
+            <p>You can read about how to contribute (and help improve) by viewing our <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/README.md" target="_blank">README</a>.
+              There you can see how to set up this project, or how to contribute a new language. Here is a big thank you to our <a href="https://github.com/rtorr/vim-cheat-sheet/graphs/contributors" target="_blank">contributors</a>!</p>
+            <p>This project is licensed under <a href="https://github.com/rtorr/vim-cheat-sheet/blob/master/License.txt" target="_blank">The MIT License (MIT)</a>.</p>
+            <h3>Contributor Code of Conduct</h3>
+            <p>This project strongly believes in having a code of conduct. <a href="/code_of_conduct/"> Please
+                see the code of conduct page for more information.</a></p>
+            <h3>Other places to find this document</h3>
+            <p>This document was embedded in <a href="https://duckduckgo.com/?q=vim+cheat+sheet" target="_blank">DuckDuckGo</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-block link-to-repo">
+    <p>Checkout the source on <a href="https://github.com/rtorr/vim-cheat-sheet" target="_blank">Github</a></p>
+  </div>
+</div>
+
+</div> <!-- end container -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25408695-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+
+</html>
